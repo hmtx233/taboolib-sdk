@@ -1,9 +1,9 @@
-package io.github.username.project
+package top.blackcat.mc
 
 import taboolib.common.platform.Plugin
 import taboolib.common.platform.function.info
 
-object ExamplePlugin : Plugin() {
+object McPlugin : Plugin() {
 
     override fun onEnable() {
         info("Successfully running ExamplePlugin!")

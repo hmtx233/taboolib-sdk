@@ -1,0 +1,15 @@
+# 插件信息提示
+plugin-name: "&a&l插件名称 > [{0}]。"
+plugin-version: "&a&l插件版本 > [{0}]。"
+plugin-author: "&a&l插件作者 > [{0}]。"
+
+# 应用提示
+database-load-start: "&a&l正在尝试进行{0}初始化操作..."
+database-load-end: "&a&l已完成{0}初始化操作。"
+loading: "&a&l正在尝试进行载入操作..."
+loaded: "&a&l已完成载入操作。"
+sql-preview: "&a&lsql预览 > [SQL语句-{0}]"
+delay: "&c命令冷却中, 请等待{CommandDelay}秒！"
+reload: "&a插件配置重载完成！"
+player: "&a&l[{0}]-[{1}]。"
+

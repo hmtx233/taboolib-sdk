@@ -1,0 +1,26 @@
+# 连接配置
+sql:
+  # 类型，不区分大小写
+  # sqlite - 本地
+  # mysql - 远程
+  type: mysql
+  # 地址
+  host: localhost
+  # 端口
+  port: 3306
+  # 玩家名
+  user: root
+  # 密码
+  password: fulong
+  # 数据库
+  database: minecraft
+  # 表名
+  table-prefix: mc
+
+redis:
+  host: "localhost"
+  port: 6379
+  auth: "default"
+  pass: ""
+  connect: 23
+  timeout: 1000l
