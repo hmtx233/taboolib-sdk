@@ -8,7 +8,7 @@ import top.blackcat.mc.config.DatabaseConfig
  *
  * @constructor Create empty Database type
  */
-enum class DatabaseType {
+enum class DbType {
     /**
      * SQLite
      * SQLite - 本地
@@ -26,7 +26,7 @@ enum class DatabaseType {
     MYSQL;
 
     companion object {
-        val INSTANCE: DatabaseType by lazy {
+        val INSTANCE: DbType by lazy {
             try {
                 valueOf(DatabaseConfig.config.getString("sql.type")!!.uppercase())
             } catch (ignore: Exception) {

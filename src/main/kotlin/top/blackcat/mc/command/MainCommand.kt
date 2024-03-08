@@ -20,18 +20,21 @@ import taboolib.platform.util.sendInfo
     permission = "BlackCat.command.use",
     permissionDefault = PermissionDefault.TRUE
 )
-object MainCommand {
+class MainCommand {
+
 
     @CommandBody(permission = "BlackCat.command.players", permissionDefault = PermissionDefault.OP)
     val players = subCommand {
         execute<CommandSender> { sender, _, _ ->
-            val player = PlayerService.getAllPlayers()
-            if (player != null) {
-                player.forEach { (key, value) ->
-                    sender.sendInfo("player", key, value)
+            val playerList = PlayerService.getAllPlayers()
+            if (playerList != null) {
+                if (playerList.isNotEmpty()) {
+                    playerList.forEach {
+                        sender.sendInfo("player", it.uid, it.name)
+                    }
+                } else {
+                    sender.sendInfo("no-data")
                 }
-            } else {
-                sender.sendInfo("no-data")
             }
         }
     }

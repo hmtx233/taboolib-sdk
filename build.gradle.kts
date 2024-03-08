@@ -17,6 +17,18 @@ taboolib {
         install(EXPANSION_REDIS)
         relocate("com.github.benmanes.caffeine", "top.blackcat.mc.libs.caffeine")
     }
+    description {
+        desc("mc-plugin 插件开发脚手架。")
+        contributors {
+            name("hmtx233")
+        }
+        dependencies {
+            name("PlaceholderAPI").with("bukkit").optional(true)
+        }
+        links {
+            name("homepage").url("https://github.com/hmtx233")
+        }
+    }
     version { taboolib = "6.1.0" }
 }
 

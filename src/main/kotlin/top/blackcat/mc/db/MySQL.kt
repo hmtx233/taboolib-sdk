@@ -11,7 +11,7 @@ import top.blackcat.mc.helper.infoMessageAsLang
 /****
  * mysql 数据库适配
  */
-class DatabaseMySQL : Database {
+class MySQL : Database {
 
 
     override val playerTable: Table<*, *> = Table("${tablePrefix}_player", host) {
@@ -33,8 +33,12 @@ class DatabaseMySQL : Database {
                 options(ColumnOptionSQL.KEY)
             }
         }
-        // 最后登录时间
+        // 登录时间
         add("last_login_time") {
+            type(ColumnTypeSQL.BIGINT, 64)
+        }
+        // 离开时间
+        add("leave_time") {
             type(ColumnTypeSQL.BIGINT, 64)
         }
     }

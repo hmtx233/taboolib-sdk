@@ -11,7 +11,7 @@ import taboolib.module.configuration.Configuration
 /***
  * redis 服务
  */
-class DatabaseRedis {
+class Redis {
 
     companion object {
         @Config("database.yml")

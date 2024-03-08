@@ -8,10 +8,9 @@ import taboolib.module.database.getHost
 import taboolib.platform.util.bukkitPlugin
 import java.io.File
 
-class DatabaseSQLite : Database {
+class SQLite : Database {
 
     private val host = File(bukkitPlugin.dataFolder, "data.db").getHost()
-
 
     override val playerTable: Table<*, *> = Table("${tablePrefix}_player", host) {
         //  玩家uid
@@ -28,6 +27,10 @@ class DatabaseSQLite : Database {
         }
         //  最后登录时间
         add("last_login_time") {
+            type(ColumnTypeSQLite.TEXT, 64)
+        }
+        //  离开时间
+        add("leave_time") {
             type(ColumnTypeSQLite.TEXT, 64)
         }
     }

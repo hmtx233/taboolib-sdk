@@ -1,7 +1,7 @@
 package top.blackcat.mc.service
 
-import top.blackcat.mc.db.DatabaseRedis
 import taboolib.expansion.RedisMessage
+import top.blackcat.mc.db.Redis
 
 /***
  * 消息订阅服务
@@ -9,16 +9,15 @@ import taboolib.expansion.RedisMessage
 object ChannelService {
 
     fun pubMsg(channel: String, msg: String) {
-        DatabaseRedis.publish(
+        Redis.publish(
             channel,
             msg
         )
     }
 
     fun subMsg(channel: String, messageHandler: RedisMessage.() -> Unit) {
-        DatabaseRedis.redisConnection.subscribe(channel, patternMode = false, func = messageHandler)
+        Redis.redisConnection.subscribe(channel, patternMode = false, func = messageHandler)
     }
-
 }
 
 
