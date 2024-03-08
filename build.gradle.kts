@@ -20,7 +20,7 @@ taboolib {
     description {
         desc("mc-plugin 插件开发脚手架。")
         contributors {
-            name("hmtx233")
+            name("https://github.com/hmtx233")
         }
         dependencies {
             name("PlaceholderAPI").with("bukkit").optional(true)

@@ -52,6 +52,7 @@ class MainCommand {
         execute<ProxyCommandSender> { sender, _, _ ->
             sender.sendInfo("plugin-name", bukkitPlugin.description.name)
             sender.sendInfo("plugin-version", bukkitPlugin.description.version)
+            bukkitPlugin.description.description?.let { sender.sendInfo("plugin-desc", it) }
             sender.sendInfo("plugin-author", bukkitPlugin.description.authors.joinToString(", "))
         }
     }
